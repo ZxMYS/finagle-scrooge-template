@@ -1,0 +1,2 @@
+finagle-scrooge-template
+========================
