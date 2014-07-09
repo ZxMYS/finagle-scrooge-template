@@ -1,6 +1,10 @@
 com.twitter.scrooge.ScroogeSBT.newSettings
 
+resolvers += "twitter" at "http://maven.twttr.com/"
+
 scalaVersion := "2.10.1"
+
+conflictWarning in ThisBuild := ConflictWarning.disable
 
 libraryDependencies ++= Seq(
 "org.apache.thrift" % "libthrift" % "0.8.0",
@@ -8,11 +12,21 @@ libraryDependencies ++= Seq(
 "com.twitter" %% "finagle-thrift" % "6.5.0"
 )
 
-name := "quickstart"
+name := "FinagleScroogeTemplate"
 
 version := "1.0"
 
-libraryDependencies += "com.twitter" %% "finagle-http" % "6.2.0"
+libraryDependencies += "com.twitter" %% "finagle-stats" % "6.5.0"
 
-scalacOptions ++= Seq("-feature", "-language:higherKinds")
+libraryDependencies += "com.twitter" %% "finagle-ostrich4" % "6.5.0"
+
+libraryDependencies += "com.twitter" %% "util" % "6.18.0"
+
+libraryDependencies += "com.twitter" %% "util-core" % "6.18.0"
+
+libraryDependencies += "com.twitter" %% "util-eval" % "6.18.0"
+
+libraryDependencies += "com.twitter" % "json" % "2.1.4"
+
+scalacOptions ++= Seq("-feature", "-language:higherKinds", "-deprecation")
 
